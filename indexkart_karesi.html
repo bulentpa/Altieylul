@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>BALIKESİR ALTIEYLUL İLÇESİ NÖBETÇİ ECZANELERİ</title>
+</head>
+
+<body>
+  <p>BALIKESİR ALTIEYLUL İLÇESİ NÖBETÇİ ECZANELERİ</p>
+  <br>
+
+  <form action="https://www.balikesireczaciodasi.org.tr/nobetci-eczaneler" method="POST">
+    <label for=""></label>
+    <input type="date" class="form-control" id="date" name="tarih1">
+    <input type="hidden" name="ilce" value="1856">
+    <input type="hidden" name="gnr" value="+NÖBETLERİ+GÖSTER+">
+    <input type="submit" name="Listele" value="Listele">
+  </form>
+  <script>
+    const dateInput = document.getElementById('date');
+
+    // ✅ Using the visitor's timezone
+    dateInput.value = formatDate();
+
+    console.log(formatDate());
+
+    function padTo2Digits(num) {
+      return num.toString().padStart(2, '0');
+    }
+
+    function formatDate(date = new Date()) {
+      return [
+        date.getFullYear(),
+        padTo2Digits(date.getMonth() + 1),
+        padTo2Digits(date.getDate()),
+      ].join('-');
+    }
+  </script>
+</body>
+
+</html>
